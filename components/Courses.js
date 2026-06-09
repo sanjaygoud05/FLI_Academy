@@ -286,7 +286,7 @@ function Courses() {
               
               {/* Header with gradient */}
               <div className="relative bg-gradient-to-br from-primary to-yellow-500 p-6 sm:p-8">
-                <button onClick={closeModal} className="absolute top-4 right-4 text-white/80 hover:text-white transition-colors">
+                <button onClick={(e) => { e.preventDefault(); e.stopPropagation(); closeModal(); }} className="absolute top-4 right-4 text-white/80 hover:text-white transition-colors">
                   <i data-lucide="x" className="text-xl"></i>
                 </button>
                 <div className="flex items-center gap-3 mb-3">
@@ -332,7 +332,7 @@ function Courses() {
                   <a href="#contact" onClick={closeModal} className="flex-1 bg-premium-black text-white text-center py-3 sm:py-3.5 rounded-xl font-semibold text-sm hover:bg-gray-800 transition-colors">
                     Get Started
                   </a>
-                  <button onClick={closeModal} className="flex-1 border-2 border-gray-200 text-gray-700 text-center py-3 sm:py-3.5 rounded-xl font-semibold text-sm hover:border-gray-300 transition-colors">
+                  <button onClick={(e) => { e.preventDefault(); e.stopPropagation(); closeModal(); }} className="flex-1 border-2 border-gray-200 text-gray-700 text-center py-3 sm:py-3.5 rounded-xl font-semibold text-sm hover:border-gray-300 transition-colors">
                     Close
                   </button>
                 </div>
