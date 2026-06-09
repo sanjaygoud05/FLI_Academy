@@ -145,7 +145,7 @@ function Results() {
 
     try {
         return (
-            <section id="results" className="py-16 sm:py-20 md:py-24 lg:py-32 px-4 sm:px-6 md:px-12 lg:px-24 bg-white relative overflow-hidden min-h-screen flex items-center" data-name="Results" data-file="components/Results.js">
+            <section id="results" className="py-8 sm:py-10 md:py-14 lg:py-16 px-4 sm:px-6 md:px-12 lg:px-24 bg-white relative overflow-hidden min-h-[50vh] flex items-center" data-name="Results" data-file="components/Results.js">
                 {/* Background Accents */}
                 <div className="absolute top-0 right-0 w-48 h-48 sm:w-64 sm:h-64 lg:w-[600px] lg:h-[600px] bg-primary/5 rounded-full blur-[80px] sm:blur-[120px] pointer-events-none"></div>
                 <div className="absolute bottom-0 left-0 w-32 h-32 sm:w-48 sm:h-48 lg:w-[400px] lg:h-[400px] bg-light rounded-full blur-[60px] sm:blur-[100px] pointer-events-none"></div>

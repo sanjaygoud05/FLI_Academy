@@ -1,7 +1,7 @@
 function Contact() {
     try {
         return (
-            <section id="contact" className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 md:px-12 lg:px-24 bg-light min-h-[70vh] flex items-center" data-name="Contact" data-file="components/Contact.js">
+            <section id="contact" className="py-6 sm:py-8 md:py-12 lg:py-14 px-4 sm:px-6 md:px-12 lg:px-24 bg-light min-h-[50vh] flex items-center" data-name="Contact" data-file="components/Contact.js">
                 <div className="max-w-7xl mx-auto w-full bg-white rounded-[1.5rem] sm:rounded-[2rem] lg:rounded-[2.5rem] shadow-[0_8px_40px_-12px_rgba(0,0,0,0.05)] border border-border/50 overflow-hidden">
                     <div className="grid lg:grid-cols-5 items-stretch">
                         

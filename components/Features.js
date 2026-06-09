@@ -4,31 +4,31 @@ function Features() {
             icon: 'icon-award',
             title: 'Certified Mentors',
             desc: 'Train under elite professionals with proven track records in global standardized tests.',
-            image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
+            image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
         },
         {
             icon: 'icon-laptop',
             title: 'Daily Assessments',
             desc: 'Experience real-exam conditions with our rigorous daily mock test infrastructure.',
-            image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
+            image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
         },
         {
             icon: 'icon-mic',
             title: 'Speaking Labs',
             desc: 'Exclusive 1-on-1 speaking sessions tailored to perfect your pronunciation and fluency.',
-            image: 'https://images.unsplash.com/photo-1591115765373-5207764f72e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
+            image: 'https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
         },
         {
             icon: 'icon-chart-line',
             title: 'Deep Analytics',
             desc: 'Granular performance tracking to identify and eliminate your specific weak points.',
-            image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
+            image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
         },
         {
             icon: 'icon-clock',
             title: 'Adaptive Scheduling',
             desc: 'Premium flexibility with batch timings designed around your professional commitments.',
-            image: 'https://images.unsplash.com/photo-1506784983877-45594efa4cbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
+            image: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
         },
         {
             icon: 'icon-layers',
@@ -40,7 +40,7 @@ function Features() {
 
     try {
         return (
-            <section id="about" className="py-16 sm:py-20 md:py-24 lg:py-32 px-4 sm:px-6 md:px-12 lg:px-24 bg-light relative min-h-screen flex items-center" data-name="Features" data-file="components/Features.js">
+            <section id="about" className="py-8 sm:py-10 md:py-14 lg:py-16 px-4 sm:px-6 md:px-12 lg:px-24 bg-light relative min-h-[50vh] flex items-center" data-name="Features" data-file="components/Features.js">
                 <div className="max-w-7xl mx-auto w-full">
                     <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
                         {/* Sticky Left Column */}
@@ -49,8 +49,8 @@ function Features() {
                                 <i data-lucide="graduation-cap" className="text-sm"></i>
                                 <h2 className="text-xs sm:text-sm font-semibold tracking-wide">The FLI Advantage</h2>
                             </div>
-                            <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-semibold text-premium-black mb-4 sm:mb-6 leading-tight">
-                                Designed for <br/> Excellence
+                            <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-semibold text-premium-black mt-4 mb-4 sm:mb-6 leading-normal text-left">
+                                Designed for Excellence
                             </h3>
                             <p className="text-base sm:text-lg text-muted font-light mb-6 sm:mb-8 md:mb-10 leading-relaxed">
                                 We don't just teach; we engineer your success through modern methodologies, premium infrastructure, and hyper-personalized learning paths designed for high achievers.

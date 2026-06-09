@@ -1,16 +1,18 @@
 function Hero() {
     try {
         return (
-            <section id="home" className="relative bg-premium-black pt-20 pb-12 sm:pt-24 sm:pb-16 md:pt-28 md:pb-20 lg:pt-36 lg:pb-24 overflow-hidden min-h-screen flex items-center" data-name="Hero" data-file="components/Hero.js">
-                {/* Dot Pattern Overlay */}
+            <section id="home" className="relative bg-premium-black pt-12 pb-6 sm:pt-16 sm:pb-10 md:pt-20 md:pb-14 lg:pt-24 lg:pb-16 overflow-hidden min-h-[70vh] flex items-center" data-name="Hero" data-file="components/Hero.js">
+                {/* Grid Background */}
                 <div
                     className="absolute inset-0"
                     style={{
-                        backgroundSize: '20px 20px',
-                        backgroundImage: 'radial-gradient(rgba(255,255,255,0.1)_1px, transparent_1px)',
-                        opacity: '0.15'
+                        backgroundSize: '40px 40px',
+                        backgroundImage: 'linear-gradient(to_right, rgba(255,255,255,0.15) 1px, transparent 1px), linear-gradient(to_bottom, rgba(255,255,255,0.15) 1px, transparent 1px)',
                     }}
                 />
+                
+                {/* Radial gradient for faded look */}
+                <div className="absolute inset-0 bg-premium-black [mask-image:radial-gradient(ellipse_at_center,transparent_30%,black)]"></div>
                 
                 {/* Blue Glow Accent */}
                 <div className="absolute top-1/4 right-0 w-48 h-48 sm:w-72 sm:h-72 md:w-[500px] md:h-[500px] lg:w-[600px] lg:h-[600px] bg-primary/20 rounded-full blur-[80px] md:blur-[120px] pointer-events-none"></div>

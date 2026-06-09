@@ -21,24 +21,24 @@ const HoverEffect = ({ items, className, onCourseClick }) => {
               <motion.span
                 className="absolute inset-0 h-full w-full bg-gradient-to-br from-primary to-yellow-500 block rounded-[2rem] shadow-xl"
                 initial={{ opacity: 0 }}
-                animate={{ opacity: 1, transition: { duration: 0.6, ease: 'easeOut' } }}
-                exit={{ opacity: 0, transition: { duration: 0.6, delay: 0.1, ease: 'easeOut' } }}
+                animate={{ opacity: 0.85, transition: { duration: 0.5, ease: 'easeInOut' } }}
+                exit={{ opacity: 0, transition: { duration: 0.5, ease: 'easeInOut' } }}
               />
             )}
           </AnimatePresence>
           <Card hovered={hoveredIndex === idx}>
-            <div className="flex items-center justify-between mb-8">
+            <div className="flex items-center justify-between mb-6">
               <div
                 className={cn(
-                  'w-12 h-12 rounded-full flex items-center justify-center shrink-0 transition-colors duration-500',
+                  'w-10 h-10 rounded-full flex items-center justify-center shrink-0 transition-colors duration-300',
                   hoveredIndex === idx ? 'bg-premium-black text-primary' : 'bg-primary/20 text-primary border border-primary/20'
                 )}
               >
-                <i data-lucide={item.icon.replace('icon-', '')} className="text-2xl"></i>
+                <i data-lucide={item.icon.replace('icon-', '')} className="text-xl"></i>
               </div>
               <div
                 className={cn(
-                  'text-[10px] font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full transition-colors duration-500',
+                  'text-[9px] font-semibold uppercase tracking-widest px-2.5 py-1 rounded-full transition-colors duration-300',
                   hoveredIndex === idx
                     ? 'bg-premium-black/10 text-premium-black border border-premium-black/20'
                     : 'bg-white/5 border border-white/10 text-white/60'
@@ -49,20 +49,18 @@ const HoverEffect = ({ items, className, onCourseClick }) => {
             </div>
             <CardTitle hovered={hoveredIndex === idx}>{item.title}</CardTitle>
             <CardDescription hovered={hoveredIndex === idx}>{item.desc}</CardDescription>
-            <div className="mt-8 space-y-3">
+            <div className="mt-6 space-y-2">
               {item.features.map((feat, fIdx) => (
-                <div key={fIdx} className="flex items-center gap-3 text-sm">
+                <div key={fIdx} className="flex items-center gap-2 text-xs">
                   <div
                     className={cn(
-                      'w-5 h-5 rounded-full flex items-center justify-center shrink-0 transition-colors duration-500',
-                      hoveredIndex === idx ? 'bg-premium-black/15' : 'bg-white/10'
+                      'w-1.5 h-1.5 rounded-full shrink-0 transition-colors duration-300',
+                      hoveredIndex === idx ? 'bg-premium-black' : 'bg-primary'
                     )}
-                  >
-                    <i data-lucide="check" className={cn('text-[10px]', hoveredIndex === idx ? 'text-premium-black' : 'text-primary')}></i>
-                  </div>
+                  ></div>
                   <span
                     className={cn(
-                      'transition-colors duration-500 font-medium',
+                      'transition-colors duration-300 font-medium',
                       hoveredIndex === idx ? 'text-premium-black' : 'text-white/80'
                     )}
                   >
@@ -74,7 +72,7 @@ const HoverEffect = ({ items, className, onCourseClick }) => {
             <a
               href="#contact"
               className={cn(
-                'mt-8 inline-flex items-center gap-2 text-sm font-semibold transition-colors duration-500',
+                'mt-6 inline-flex items-center gap-2 text-xs font-semibold transition-colors duration-300',
                 hoveredIndex === idx ? 'text-premium-black' : 'text-primary group-hover:text-primary/80'
               )}
             >
@@ -91,7 +89,7 @@ const Card = ({ className, children, hovered }) => {
   return (
     <div
       className={cn(
-        'rounded-[1.75rem] h-full w-full p-2 overflow-hidden relative z-20 transition-all duration-500',
+        'rounded-[1.75rem] h-full w-full p-2 overflow-hidden relative z-20 transition-all duration-300',
         hovered ? 'bg-transparent border-transparent' : 'bg-premium-black border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.12)]',
         className
       )}
@@ -105,7 +103,7 @@ const CardTitle = ({ className, children, hovered }) => {
   return (
     <h4
       className={cn(
-        'font-semibold font-heading text-2xl tracking-wide transition-colors duration-500',
+        'font-semibold font-heading text-2xl tracking-wide transition-colors duration-300',
         hovered ? 'text-premium-black' : 'text-white',
         className
       )}
@@ -119,7 +117,7 @@ const CardDescription = ({ className, children, hovered }) => {
   return (
     <p
       className={cn(
-        'mt-4 tracking-wide leading-relaxed text-sm transition-colors duration-500 line-clamp-3',
+        'mt-4 tracking-wide leading-relaxed text-sm transition-colors duration-300 line-clamp-3',
         hovered ? 'text-premium-black/80 font-medium' : 'text-white/60 font-light',
         className
       )}
@@ -232,7 +230,7 @@ function Courses() {
     return (
       <section
         id="courses"
-        className="pt-8 sm:pt-12 md:pt-16 lg:pt-20 pb-4 sm:pb-6 md:pb-8 lg:pb-10 px-4 sm:px-6 md:px-12 lg:px-24 relative overflow-hidden min-h-[45vh] flex flex-col justify-center"
+        className="pt-4 sm:pt-6 md:pt-10 lg:pt-12 pb-2 sm:pb-3 md:pb-4 lg:pb-6 px-4 sm:px-6 md:px-12 lg:px-24 relative overflow-hidden min-h-[35vh] flex flex-col justify-center"
         style={{ backgroundColor: '#111111' }}
         data-name="Courses"
         data-file="components/Courses.js"
@@ -276,62 +274,65 @@ function Courses() {
         {/* Course Detail Modal */}
         {isModalOpen && selectedCourse && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
-            <div className="absolute inset-0 bg-black/90 backdrop-blur-sm" onClick={closeModal}></div>
+            <div className="absolute inset-0 bg-black/95 backdrop-blur-md" onClick={closeModal}></div>
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              className="relative bg-premium-black rounded-[2rem] sm:rounded-[2.5rem] shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-white/10 no-scrollbar"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              className="relative bg-white rounded-2xl sm:rounded-3xl shadow-2xl max-w-lg w-full max-h-[85vh] overflow-y-auto no-scrollbar"
               style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
               <style>{`.no-scrollbar::-webkit-scrollbar { display: none; }`}</style>
-              <div className="sticky top-0 bg-premium-black border-b border-white/10 p-6 sm:p-8 flex justify-between items-start">
-                <div>
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center border-2 border-primary">
-                      <i data-lucide={selectedCourse.icon.replace('icon-', '')} className="text-xl text-primary"></i>
-                    </div>
-                    <span className="text-xs font-semibold text-primary uppercase tracking-widest">{selectedCourse.target}</span>
-                  </div>
-                  <h3 className="text-2xl sm:text-3xl font-heading font-semibold text-white">{selectedCourse.title}</h3>
-                </div>
-                <button onClick={closeModal} className="text-white/60 hover:text-white transition-colors">
-                  <i data-lucide="x" className="text-2xl"></i>
+              
+              {/* Header with gradient */}
+              <div className="relative bg-gradient-to-br from-primary to-yellow-500 p-6 sm:p-8">
+                <button onClick={closeModal} className="absolute top-4 right-4 text-white/80 hover:text-white transition-colors">
+                  <i data-lucide="x" className="text-xl"></i>
                 </button>
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-14 h-14 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                    <i data-lucide={selectedCourse.icon.replace('icon-', '')} className="text-2xl text-white"></i>
+                  </div>
+                  <div>
+                    <span className="text-xs font-semibold text-white/90 uppercase tracking-wider">{selectedCourse.target}</span>
+                    <h3 className="text-xl sm:text-2xl font-heading font-bold text-white">{selectedCourse.title}</h3>
+                  </div>
+                </div>
               </div>
 
               <div className="p-6 sm:p-8">
-                <p className="text-white/70 mb-6 leading-relaxed">{selectedCourse.desc}</p>
+                <p className="text-gray-600 mb-6 leading-relaxed text-sm">{selectedCourse.desc}</p>
 
-                <div className="grid grid-cols-2 gap-4 mb-6">
-                  <div className="bg-white/5 border border-white/10 p-4 rounded-xl text-center">
-                    <div className="text-sm text-white/60 mb-1">Duration</div>
-                    <div className="text-lg font-semibold text-primary">{selectedCourse.details.duration}</div>
+                <div className="grid grid-cols-2 gap-3 mb-6">
+                  <div className="bg-gray-50 p-4 rounded-xl">
+                    <div className="text-xs text-gray-500 mb-1 font-medium">Duration</div>
+                    <div className="text-base font-bold text-gray-900">{selectedCourse.details.duration}</div>
                   </div>
-                  <div className="bg-white/5 border border-white/10 p-4 rounded-xl text-center">
-                    <div className="text-sm text-white/60 mb-1">Sessions</div>
-                    <div className="text-lg font-semibold text-primary">{selectedCourse.details.sessions}</div>
+                  <div className="bg-gray-50 p-4 rounded-xl">
+                    <div className="text-xs text-gray-500 mb-1 font-medium">Sessions</div>
+                    <div className="text-base font-bold text-gray-900">{selectedCourse.details.sessions}</div>
                   </div>
                 </div>
 
                 <div className="mb-6">
-                  <h4 className="text-lg font-semibold text-white mb-3">What's Included:</h4>
-                  <ul className="space-y-2">
+                  <h4 className="text-sm font-bold text-gray-900 mb-4 uppercase tracking-wide">Program Highlights</h4>
+                  <div className="space-y-3">
                     {selectedCourse.details.includes.map((item, idx) => (
-                      <li key={idx} className="flex items-center gap-3 text-white/80">
-                        <i data-lucide="check-circle" className="text-primary text-lg shrink-0"></i>
-                        <span>{item}</span>
-                      </li>
+                      <div key={idx} className="flex items-start gap-3">
+                        <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
+                          <div className="w-2 h-2 rounded-full bg-primary"></div>
+                        </div>
+                        <span className="text-sm text-gray-700 leading-relaxed">{item}</span>
+                      </div>
                     ))}
-                  </ul>
+                  </div>
                 </div>
 
                 <div className="flex gap-3">
-                  <a href="#contact" onClick={closeModal} className="flex-1 btn-primary text-center py-3 sm:py-4">
-                    Contact Us
-                    <i data-lucide="arrow-right" className="ml-2"></i>
+                  <a href="#contact" onClick={closeModal} className="flex-1 bg-premium-black text-white text-center py-3 sm:py-3.5 rounded-xl font-semibold text-sm hover:bg-gray-800 transition-colors">
+                    Get Started
                   </a>
-                  <button onClick={closeModal} className="flex-1 btn-outline text-center py-3 sm:py-4">
+                  <button onClick={closeModal} className="flex-1 border-2 border-gray-200 text-gray-700 text-center py-3 sm:py-3.5 rounded-xl font-semibold text-sm hover:border-gray-300 transition-colors">
                     Close
                   </button>
                 </div>

@@ -1,7 +1,7 @@
 function CTA() {
     try {
         return (
-            <section className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 relative overflow-hidden bg-premium-black min-h-[60vh] flex items-center" data-name="CTA" data-file="components/CTA.js">
+            <section className="py-6 sm:py-8 md:py-12 lg:py-14 xl:py-16 relative overflow-hidden bg-premium-black min-h-[45vh] flex items-center" data-name="CTA" data-file="components/CTA.js">
                 {/* Global Map Background */}
                 <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center opacity-90"></div>
                 
