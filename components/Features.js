@@ -4,37 +4,43 @@ function Features() {
             icon: 'icon-award',
             title: 'Certified Mentors',
             desc: 'Train under elite professionals with proven track records in global standardized tests.',
-            image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
+            image: 'assets/certified-mentors.png',
+            noOverlay: true
         },
         {
             icon: 'icon-laptop',
             title: 'Daily Assessments',
             desc: 'Experience real-exam conditions with our rigorous daily mock test infrastructure.',
-            image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
+            image: 'assets/daily-assignments.png',
+            noOverlay: true
         },
         {
             icon: 'icon-mic',
             title: 'Speaking Labs',
             desc: 'Exclusive 1-on-1 speaking sessions tailored to perfect your pronunciation and fluency.',
-            image: 'https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
+            image: 'assets/speaking-labs.png',
+            noOverlay: true
         },
         {
             icon: 'icon-chart-line',
             title: 'Deep Analytics',
             desc: 'Granular performance tracking to identify and eliminate your specific weak points.',
-            image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
+            image: 'assets/deep-analytics.png',
+            noOverlay: true
         },
         {
             icon: 'icon-clock',
             title: 'Adaptive Scheduling',
             desc: 'Premium flexibility with batch timings designed around your professional commitments.',
-            image: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
+            image: 'assets/adaptive-scheduling.png',
+            noOverlay: true
         },
         {
             icon: 'icon-layers',
             title: 'Hybrid Learning',
             desc: 'Flawless transition between our luxury physical centers and premium digital platform.',
-            image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
+            image: 'assets/hybrid-learning.png',
+            noOverlay: true
         }
     ];
 
@@ -77,7 +83,7 @@ function Features() {
                                             alt={feature.title}
                                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                                         />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-premium-black/50 to-transparent"></div>
+                                        {!feature.noOverlay && <div className="absolute inset-0 bg-gradient-to-t from-premium-black/50 to-transparent"></div>}
                                         <div className="absolute bottom-4 left-4">
                                             <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-lg">
                                                 <i data-lucide={feature.icon.replace('icon-', '')} className="text-lg sm:text-xl text-premium-dark"></i>

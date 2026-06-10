@@ -1,24 +1,26 @@
 function Hero() {
     try {
         return (
-            <section id="home" className="relative bg-premium-black pt-16 pb-8 sm:pt-20 sm:pb-12 md:pt-24 md:pb-16 lg:pt-28 lg:pb-20 overflow-hidden min-h-[80vh] sm:min-h-[75vh] md:min-h-[70vh] flex items-center" data-name="Hero" data-file="components/Hero.js">
-                {/* Grid Background */}
-                <div
-                    className="absolute inset-0"
-                    style={{
-                        backgroundSize: '40px 40px',
-                        backgroundImage: 'linear-gradient(to_right, rgba(255,255,255,0.15) 1px, transparent 1px), linear-gradient(to_bottom, rgba(255,255,255,0.15) 1px, transparent 1px)',
-                    }}
-                />
-                
-                {/* Radial gradient for faded look */}
-                <div className="absolute inset-0 bg-premium-black [mask-image:radial-gradient(ellipse_at_center,transparent_30%,black)]"></div>
-                
-                {/* Blue Glow Accent */}
-                <div className="absolute top-1/4 right-0 w-32 h-32 sm:w-48 sm:h-48 md:w-[400px] md:h-[400px] lg:w-[500px] lg:h-[500px] bg-primary/20 rounded-full blur-[60px] sm:blur-[80px] md:blur-[100px] pointer-events-none"></div>
-                
-                {/* Yellow Glow Accent */}
-                <div className="absolute bottom-1/4 left-0 w-24 h-24 sm:w-32 sm:h-32 md:w-[300px] md:h-[300px] lg:w-[400px] lg:h-[400px] bg-yellow-400/10 rounded-full blur-[40px] sm:blur-[60px] md:blur-[80px] pointer-events-none"></div>
+            <section id="home" className="relative bg-premium-black pt-16 pb-8 sm:pt-20 sm:pb-12 md:pt-24 md:pb-16 lg:pt-28 lg:pb-20 overflow-hidden min-h-screen flex items-center" data-name="Hero" data-file="components/Hero.js">
+                {/* ── Backgrounds ── */}
+                {/* Dot grid */}
+                <div className="absolute inset-0 opacity-20" style={{
+                    backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.35) 1px, transparent 1px)',
+                    backgroundSize: '28px 28px'
+                }} />
+
+                {/* Large yellow glow — right */}
+                <div className="absolute -top-20 right-0 w-[600px] h-[600px] bg-primary/25 rounded-full blur-[120px] pointer-events-none" />
+                {/* Small yellow glow — left bottom */}
+                <div className="absolute bottom-0 -left-20 w-[350px] h-[350px] bg-primary/15 rounded-full blur-[90px] pointer-events-none" />
+                {/* Diagonal accent stripe */}
+                <div className="absolute inset-0 pointer-events-none" style={{
+                    background: 'linear-gradient(135deg, transparent 60%, rgba(245,196,0,0.04) 100%)'
+                }} />
+                {/* Vignette edges */}
+                <div className="absolute inset-0 pointer-events-none" style={{
+                    background: 'radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.6) 100%)'
+                }} />
                 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 relative z-10 w-full">
                     <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
@@ -71,12 +73,31 @@ function Hero() {
 
                         {/* Right Image Container */}
                         <div className="lg:col-span-5 relative hidden lg:block order-2 lg:order-2">
-                            <div className="relative rounded-[2rem] xl:rounded-[2.5rem] overflow-hidden aspect-[4/5] border-4 border-white/5 shadow-2xl group">
-                                <div className="absolute inset-0 bg-gradient-to-t from-premium-black via-transparent to-transparent z-10"></div>
-                                <img 
-                                    src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                            <div className="relative flex items-end justify-center h-full">
+                                {/* Glowing ring behind image */}
+                                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                                    <div className="w-[380px] h-[380px] rounded-full"
+                                        style={{ background: 'radial-gradient(circle, rgba(245,196,0,0.08) 0%, transparent 70%)' }} />
+                                </div>
+                                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                                    <div className="w-[420px] h-[420px] rounded-full border border-primary/10" />
+                                </div>
+                                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                                    <div className="w-[500px] h-[500px] rounded-full border border-primary/5" />
+                                </div>
+                                {/* Yellow glow behind image */}
+                                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-3/4 bg-primary/10 rounded-full blur-[60px] pointer-events-none z-0"></div>
+                                {/* Image */}
+                                <img
+                                    src="assets/hero-image.png"
                                     alt="Premium Education"
-                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
+                                    className="relative z-10 w-full h-auto object-contain max-h-[520px]"
+                                    style={{
+                                        mixBlendMode: 'lighten',
+                                        filter: 'brightness(0.9) contrast(1.0)',
+                                        maskImage: 'linear-gradient(to bottom, black 60%, transparent 100%)',
+                                        WebkitMaskImage: 'linear-gradient(to bottom, black 60%, transparent 100%)'
+                                    }}
                                 />
                             </div>
                         </div>
